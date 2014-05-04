@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+
+<html>
+    
+    <head>
+        <title>3D Object Visualizer</title>
+        <script type="text/javascript" src="../libs/mrdoob-three.js-eb6c64d/build/three.js"></script>
+        <script type="text/javascript" src="../libs/mrdoob-three.js-eb6c64d/src/extras/geometries/ConvexGeometry.js"></script>
+
+        <script type="text/javascript" src="../libs/DataStream.js"></script>
+        <script type="text/javascript" src="../libs/PLYLoader.js"></script>
+        <script type="text/javascript" src="../libs/jquery-1.10.2.js"></script>
+        <script type="text/javascript" src="../libs/stats.min.js"></script>
+        <script type="text/javascript" src="../libs/OrbitControls.js"></script>
+        <script type="text/javascript" src="../libs/KeyFlyControls.js"></script>
+        <script type="text/javascript" src="../libs/Director.js"></script>
+        <script type="text/javascript" src="../libs/Tween.js"></script>
+        <script type="text/javascript" src="simple-visualizer.js"></script>
+    </head>
+    <body bgcolor="#222222">
+        <div id="container"></div>
+        <script>
+            var visualizerSize = { width: 600, height: 400 }
+	    
+	    $( document ).ready(function() {
+            var H = new THREE.Matrix4(1.000000e+00,0.000000e+00,0.000000e+00,1.000000e+00,
+                                     0.000000e+00,1.000000e+00,0.000000e+00,1.000000e+00,
+                                     0.000000e+00,0.000000e+00,1.000000e+00,1.000000e+00,
+                                     0.000000e+00,0.000000e+00,0.000000e+00,1.000000e+00);
+        var ply_file = ['models/st_peters_aerial_300.ply', 'models/st_peters_interior_floors_beige_500.ply'];
+	      start(ply_file, H, visualizerSize, $('#container'));
+	    });
+        </script>
+    </body>
+</html>
